@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOCTOR HOME PAGE</title>
+  <style>
+    body {
+      background-color: green;
+      color: lightblue;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .link-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .link-container a {
+      margin: 5px;
+      color: white;
+    }
+
+    hr {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    h2 {
+      color: lightblue;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .username {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: lightblue;
+    }
+    .navbar {
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .navbar a {
+      color: darkblue;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var params = new URLSearchParams(window.location.search);
+      var username = params.get("Username");
+      var welcomeMessage = document.createElement("h2");
+      welcomeMessage.textContent = "Welcome, " + username + "!";
+      var container = document.getElementsByClassName("container")[0];
+      container.appendChild(welcomeMessage);
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: lightblue; font-style: italic; margin: 0;">pharma</h1>
+    <h3 class="username"><?php echo $_SESSION['Username']; ?></h3>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <a href="PatientData.html">Patient data</a>
+      <a href="Operations.html">Operations</a>
+      <a href="DoctorbioData.html">Bio Data</a>
+    </div>
+
+    <hr>
+  </div>
+</body>
+</html>

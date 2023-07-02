@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PATIENT LOGIN</title>
+  <style>
+    body {
+      background-color: green;
+    }
+
+    input[type="submit"] {
+      background-color: lightgreen;
+      color: black;
+    }
+    h1, h2 ,p{
+      color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <h2>PATIENT LOGIN</h2>
+  <p>Input Username and Password</p>
+  <form action="PatientLogin.php" method="POST">
+    <label for="Username">Username:</label>
+    <input type="text" id="Username" name="Username" required>
+    <br><br>
+    <label for="Password">Password:</label>
+    <input type="password" id="Password" name="Password" required>
+    <br><br>
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
+

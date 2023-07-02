@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Patient</title>
+    <style>
+.button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: lightgreen;
+      color: black;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-right: 10mm;
+      margin-bottom: 10px;
+    }
+    body {
+      background-color: green;
+      color: lightblue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Delete Patient from DB</h1>
+    <form action="Deletepatient.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <input type="submit" value="Delete">
+    </form>
+    <h2><u>Confirm operation by viewing patients table</u></h2>
+    <div class="button-container">
+        <a href="veiw_patients.php">
+            <button class="button">View Patients Info</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: green;
+      color: lightblue;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: lightblue;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .navbar a {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      background-color: lightblue;
+      color: black;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    hr {
+      width: 100%;
+      margin-top: 20px;
+      border: none;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: lightblue;
+    }
+
+    .username {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: lightblue;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var params = new URLSearchParams(window.location.search);
+      var username = params.get("username");
+      var welcomeMessage = document.getElementById("welcomeMessage");
+      welcomeMessage.textContent = "Welcome, " + username + "!";
+
+      // Add the username to the pharmacist bio data link
+      var pharmacistBioDataLink = document.querySelector("a[href='PharmacistbioData.html']");
+      pharmacistBioDataLink.href = "PharmacistbioData.html?Username=" + encodeURIComponent(username);
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: lightblue; font-style: italic; margin: 0;">pharma</h1>
+    <div class="navbar">
+      <a href="Pharma_PatientData.html">Pharma_Patient Data</a>
+      <a href="PharmaOperations.html">Operations</a>
+      <a href="PharmacistbioData.html">Bio Data</a>
+    </div>
+    <hr>
+    <h2 id="welcomeMessage"></h2>
+  </div>
+</body>
+</html>
+
